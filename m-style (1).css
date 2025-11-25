@@ -1,0 +1,105 @@
+:root{
+  --header-height: 82px; /* adjust as needed */
+  --canvas-bg: #0b3d2e; /* forest green */
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+/* Page background and base text color */
+body{
+  background-color: #fff1da; /* slightly darker cream */
+  color: #0b2545; /* dark blue-ish text for contrast */
+  font-family: 'Montserrat', sans-serif;
+}
+/* header svg placeholder removed */
+/* Main UI container (now responsive) */
+#container{
+  position:relative;
+  margin: 1.4rem auto;
+  left:auto;
+  transform:none;
+  box-shadow:5px 5px 5px black;
+  border:1px solid black;
+  padding:10px;
+  width: min(650px, 92%);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+/* Ensure the page content respects the header by adding some top spacing */
+.container{
+  min-height: calc(100vh - var(--header-height));
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top: 1.2rem;
+}
+/* Controls */
+#controls{
+  font-family: 'Bangers', cursive;
+  font-size:32px;
+  margin:10px;
+}
+#controls > p{
+  font-size: 48px;
+}
+#canvas1{
+  box-shadow:inset 5px 5px 5px black;
+  border:1px solid black;
+  width:100%;
+  height:auto; /* keep aspect while JS sets the drawing buffer */
+  background-color: var(--canvas-bg);
+  display:block;
+}
+
+
+#mandrake{
+  display:none;
+}
+
+/* Header styles */
+.site-header{
+  background: linear-gradient(90deg, #0f172a 0%, #0b2545 50%, #0b2545 100%);
+  color: #fff;
+  padding: 28px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  border-bottom: 2px solid rgba(255,255,255,0.05);
+}
+.site-header .header-inner{
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
+}
+.site-header h1{
+  font-family: 'Bangers', 'Montserrat', sans-serif;
+  font-weight:700;
+  font-size:2.1rem;
+  color:#fff; /* fallback color */
+  letter-spacing:1px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+  margin:0;
+  padding:0;
+  /* subtle gradient text for a modern effect */
+  background-image: linear-gradient(90deg, #e0f7ff 0%, #ffd7a8 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 480px){
+  .site-header h1{ font-size:1.4rem; }
+}
+
+/* Responsive styles for controls and description */
+@media (max-width: 720px){
+  #controls{ font-size: 22px; }
+  #controls > p{ font-size: 34px; }
+}
+@media (max-width: 420px){
+  #controls{ font-size: 18px; }
+  #controls > p{ font-size: 28px; }
+  #container{ padding: 8px; }
+}
